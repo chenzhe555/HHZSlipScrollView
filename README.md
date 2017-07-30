@@ -1,0 +1,2 @@
+# HHZSlipScrollView
+新闻类顶部的滚动视图HHZSlipScrollView
