@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>HHZBaseClass.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>HHZCategory.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>HHZUtils.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-HHZSlipScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0A375CC5AD3796B99E68D519DD039925</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B14067D386E5B02DD4E0B4123CB28A5B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C55A5CADA8AFB476398B7B2350CD32D7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F680E6685F30569E9729FB0E9154EC98</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
