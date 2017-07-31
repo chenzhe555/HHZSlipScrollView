@@ -22,20 +22,44 @@
     // Configure the view for the selected state
 }
 
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    [self updateCellSubviewsFrame];
+}
+
+-(void)updateCellSubviewsFrame
+{
+    self.titleLabel.frame = self.bounds;
+}
+
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
     {
-        _titleLabel = [[HHZLabel alloc] init];
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.textColor = [HHZSlipScrollManager shareManager].titleNormalColor;
         _titleLabel.font = [HHZSlipScrollManager shareManager].titleFont;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self.contentView addSubview:_titleLabel];
+        [self addSubview:_titleLabel];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }
 
++(instancetype)configCellWithTableView:(UITableView *)tableView title:(NSString *)title
+{
+    static NSString * HHZSlipTopItemCellIndentifier = @"HHZSlipTopItemCellIndentifier";
+    HHZSlipTopItemCell * cell = [tableView dequeueReusableCellWithIdentifier:HHZSlipTopItemCellIndentifier];
+    if (!cell)
+    {
+        cell = [[HHZSlipTopItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:HHZSlipTopItemCellIndentifier];
+        cell.transform = CGAffineTransformMakeRotation(M_PI_2);
+    }
+    cell.titleLabel.text = title;
+    return cell;
+}
 
 -(void)setIsSelected:(BOOL)isSelected
 {
@@ -48,19 +72,6 @@
     {
         self.titleLabel.textColor = [HHZSlipScrollManager shareManager].titleNormalColor;
     }
-    
-}
-
-+(instancetype)configCellWithTableView:(UITableView *)tableView
-{
-    static NSString * HHZSlipTopItemCellIndentifier = @"HHZSlipTopItemCellIndentifier";
-    HHZSlipTopItemCell * cell = [tableView dequeueReusableCellWithIdentifier:HHZSlipTopItemCellIndentifier];
-    if (!cell)
-    {
-        cell = [[HHZSlipTopItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:HHZSlipTopItemCellIndentifier];
-        cell.transform = CGAffineTransformMakeRotation(M_PI_2);
-    }
-    return cell;
 }
 
 -(void)titleShowAnimate

@@ -7,29 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <HHZBaseClass/HHZLabel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HHZSlipTopItemCell : UITableViewCell
-
-+(instancetype)configCellWithTableView:(UITableView *)tableView;
-#pragma mark 对外可选实现
-/**
- *  显示的文字
- */
-@property (nonatomic, strong) HHZLabel * titleLabel;
-
 /**
  *  当前是否被选中
  */
 @property (nonatomic, assign) BOOL isSelected;
-
 /**
- *  选中后文字的动画效果
+ *  显示的文字
+ */
+@property (nonatomic, strong) UILabel * titleLabel;
+
+
+#pragma mark Required
+/**
+ *  配置Cell基本信息
+ */
++(instancetype)configCellWithTableView:(UITableView *)tableView title:(NSString *)title;
+
+#pragma mark Optional
+/**
+ *  选中文字后的动画效果
  */
 -(void)titleShowAnimate;
-
 @end
 
 NS_ASSUME_NONNULL_END

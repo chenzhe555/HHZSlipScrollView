@@ -16,6 +16,8 @@
 		743C4AFE1F2E349200CE3F5C /* HHZSlipTopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 743C4AFD1F2E349200CE3F5C /* HHZSlipTopScrollView.m */; };
 		744BC8351F2E39B5002B87C8 /* HHZSlipTopItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 744BC8341F2E39B5002B87C8 /* HHZSlipTopItemCell.m */; };
 		744BC8381F2E3AE0002B87C8 /* HHZSlipScrollManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 744BC8371F2E3AE0002B87C8 /* HHZSlipScrollManager.m */; };
+		744BC8641F2EB929002B87C8 /* HHZSlipScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744BC8631F2EB929002B87C8 /* HHZSlipScrollView.m */; };
+		744BC8671F2EBDBE002B87C8 /* HHZSlipBottomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744BC8661F2EBDBE002B87C8 /* HHZSlipBottomScrollView.m */; };
 		9F83362BFFA2E67061AA3499 /* libPods-HHZSlipScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 882595F4337F57ECD7B1F0D6 /* libPods-HHZSlipScrollView.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,10 @@
 		744BC8341F2E39B5002B87C8 /* HHZSlipTopItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHZSlipTopItemCell.m; sourceTree = "<group>"; };
 		744BC8361F2E3AE0002B87C8 /* HHZSlipScrollManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHZSlipScrollManager.h; sourceTree = "<group>"; };
 		744BC8371F2E3AE0002B87C8 /* HHZSlipScrollManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHZSlipScrollManager.m; sourceTree = "<group>"; };
+		744BC8621F2EB929002B87C8 /* HHZSlipScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHZSlipScrollView.h; sourceTree = "<group>"; };
+		744BC8631F2EB929002B87C8 /* HHZSlipScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHZSlipScrollView.m; sourceTree = "<group>"; };
+		744BC8651F2EBDBE002B87C8 /* HHZSlipBottomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHZSlipBottomScrollView.h; sourceTree = "<group>"; };
+		744BC8661F2EBDBE002B87C8 /* HHZSlipBottomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHZSlipBottomScrollView.m; sourceTree = "<group>"; };
 		882595F4337F57ECD7B1F0D6 /* libPods-HHZSlipScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HHZSlipScrollView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +111,10 @@
 				744BC8341F2E39B5002B87C8 /* HHZSlipTopItemCell.m */,
 				744BC8361F2E3AE0002B87C8 /* HHZSlipScrollManager.h */,
 				744BC8371F2E3AE0002B87C8 /* HHZSlipScrollManager.m */,
+				744BC8621F2EB929002B87C8 /* HHZSlipScrollView.h */,
+				744BC8631F2EB929002B87C8 /* HHZSlipScrollView.m */,
+				744BC8651F2EBDBE002B87C8 /* HHZSlipBottomScrollView.h */,
+				744BC8661F2EBDBE002B87C8 /* HHZSlipBottomScrollView.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -250,9 +260,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				743C4AFE1F2E349200CE3F5C /* HHZSlipTopScrollView.m in Sources */,
+				744BC8641F2EB929002B87C8 /* HHZSlipScrollView.m in Sources */,
 				743C4AE91F2E33D600CE3F5C /* ViewController.m in Sources */,
 				743C4AE61F2E33D600CE3F5C /* AppDelegate.m in Sources */,
 				744BC8351F2E39B5002B87C8 /* HHZSlipTopItemCell.m in Sources */,
+				744BC8671F2EBDBE002B87C8 /* HHZSlipBottomScrollView.m in Sources */,
 				743C4AE31F2E33D600CE3F5C /* main.m in Sources */,
 				744BC8381F2E3AE0002B87C8 /* HHZSlipScrollManager.m in Sources */,
 			);

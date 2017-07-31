@@ -23,35 +23,24 @@
         self.showsVerticalScrollIndicator = NO;
         self.showsHorizontalScrollIndicator = NO;
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _topScrollHeight = 0;
     }
     return self;
 }
 
--(void)setDataArray:(NSMutableArray *)dataArray
+-(void)setTitleArray:(NSArray *)titleArray
 {
-    _dataArray = dataArray;
-    //计算最大宽同时存储宽度
+    _titleArray = titleArray;
     _maxHeight = [self calculateMaxWidth];
 }
-
--(void)setTopScrollHeight:(CGFloat)topScrollHeight
-{
-    if (_topScrollHeight != topScrollHeight) {
-        _topScrollHeight = topScrollHeight;
-        self.frame = CGRectMake(self.x, self.y, self.width, _topScrollHeight);
-    }
-}
-
 
 -(CGFloat)calculateMaxWidth
 {
     CGFloat maxWidth = 0.0f;
     CGSize labelSize = CGSizeZero;
     
-    for (int i = 0; i < _dataArray.count; i++)
+    for (int i = 0; i < _titleArray.count; i++)
     {
-        labelSize = [HHZCalculateTool getLabelActualSizeWithString:[_dataArray objectAtIndex:i] andFont:[HHZSlipScrollManager shareManager].titleFont.pointSize andLines:0 andlabelWidth:SCREENW];
+        labelSize = [HHZCalculateTool getLabelActualSizeWithString:[_titleArray objectAtIndex:i] andFont:[HHZSlipScrollManager shareManager].titleFont.pointSize andLines:0 andlabelWidth:SCREENW];
         maxWidth = MAX(labelSize.width, maxWidth);
         [_heightArray addObject:@(labelSize.width + [HHZSlipScrollManager shareManager].cellItemSpace * 2)];
     }
@@ -60,7 +49,7 @@
         case HHZSlipTopScrollViewItemAreaTypeRegulation:
         {
             [_heightArray removeAllObjects];
-            for (int i = 0; i < _dataArray.count; i++)
+            for (int i = 0; i < _titleArray.count; i++)
             {
                 [_heightArray addObject:@(maxWidth + [HHZSlipScrollManager shareManager].cellItemSpace * 2)];
             }
@@ -69,8 +58,8 @@
         case HHZSlipTopScrollViewItemAreaTypeByScreenWidth:
         {
             [_heightArray removeAllObjects];
-            CGFloat width = SCREENW/_dataArray.count;
-            for (int i = 0; i < _dataArray.count; i++)
+            CGFloat width = SCREENW/_titleArray.count;
+            for (int i = 0; i < _titleArray.count; i++)
             {
                 [_heightArray addObject:@(width)];
             }
