@@ -18,6 +18,8 @@
 		744BC8381F2E3AE0002B87C8 /* HHZSlipScrollManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 744BC8371F2E3AE0002B87C8 /* HHZSlipScrollManager.m */; };
 		744BC8641F2EB929002B87C8 /* HHZSlipScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744BC8631F2EB929002B87C8 /* HHZSlipScrollView.m */; };
 		744BC8671F2EBDBE002B87C8 /* HHZSlipBottomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744BC8661F2EBDBE002B87C8 /* HHZSlipBottomScrollView.m */; };
+		74D988DF1F321DE400D57EFF /* HHZSlipBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D988DE1F321DE400D57EFF /* HHZSlipBottomView.m */; };
+		74D988E21F321FC100D57EFF /* HHZSlipBottomItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D988E11F321FC100D57EFF /* HHZSlipBottomItemCell.m */; };
 		9F83362BFFA2E67061AA3499 /* libPods-HHZSlipScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 882595F4337F57ECD7B1F0D6 /* libPods-HHZSlipScrollView.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,10 @@
 		744BC8631F2EB929002B87C8 /* HHZSlipScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHZSlipScrollView.m; sourceTree = "<group>"; };
 		744BC8651F2EBDBE002B87C8 /* HHZSlipBottomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHZSlipBottomScrollView.h; sourceTree = "<group>"; };
 		744BC8661F2EBDBE002B87C8 /* HHZSlipBottomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHZSlipBottomScrollView.m; sourceTree = "<group>"; };
+		74D988DD1F321DE400D57EFF /* HHZSlipBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHZSlipBottomView.h; sourceTree = "<group>"; };
+		74D988DE1F321DE400D57EFF /* HHZSlipBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHZSlipBottomView.m; sourceTree = "<group>"; };
+		74D988E01F321FC100D57EFF /* HHZSlipBottomItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHZSlipBottomItemCell.h; sourceTree = "<group>"; };
+		74D988E11F321FC100D57EFF /* HHZSlipBottomItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHZSlipBottomItemCell.m; sourceTree = "<group>"; };
 		882595F4337F57ECD7B1F0D6 /* libPods-HHZSlipScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HHZSlipScrollView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,8 +119,12 @@
 				744BC8371F2E3AE0002B87C8 /* HHZSlipScrollManager.m */,
 				744BC8621F2EB929002B87C8 /* HHZSlipScrollView.h */,
 				744BC8631F2EB929002B87C8 /* HHZSlipScrollView.m */,
+				74D988E01F321FC100D57EFF /* HHZSlipBottomItemCell.h */,
+				74D988E11F321FC100D57EFF /* HHZSlipBottomItemCell.m */,
 				744BC8651F2EBDBE002B87C8 /* HHZSlipBottomScrollView.h */,
 				744BC8661F2EBDBE002B87C8 /* HHZSlipBottomScrollView.m */,
+				74D988DD1F321DE400D57EFF /* HHZSlipBottomView.h */,
+				74D988DE1F321DE400D57EFF /* HHZSlipBottomView.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -259,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74D988E21F321FC100D57EFF /* HHZSlipBottomItemCell.m in Sources */,
 				743C4AFE1F2E349200CE3F5C /* HHZSlipTopScrollView.m in Sources */,
 				744BC8641F2EB929002B87C8 /* HHZSlipScrollView.m in Sources */,
 				743C4AE91F2E33D600CE3F5C /* ViewController.m in Sources */,
@@ -267,6 +278,7 @@
 				744BC8671F2EBDBE002B87C8 /* HHZSlipBottomScrollView.m in Sources */,
 				743C4AE31F2E33D600CE3F5C /* main.m in Sources */,
 				744BC8381F2E3AE0002B87C8 /* HHZSlipScrollManager.m in Sources */,
+				74D988DF1F321DE400D57EFF /* HHZSlipBottomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

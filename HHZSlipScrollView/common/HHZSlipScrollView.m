@@ -9,6 +9,7 @@
 #import "HHZSlipScrollView.h"
 #import "HHZSlipBottomScrollView.h"
 #import "HHZSlipTopItemCell.h"
+#import "HHZSlipBottomItemCell.h"
 #import "HHZSlipScrollManager.h"
 #import <HHZCategory/UIView+HHZCategory.h>
 
@@ -179,9 +180,13 @@
     if (![_currentTopCell isEqual:cell])
     {
         [self topItemTapScroll:cell indexPath:indexPath];
+        [self switchBottomScrollToIndex:indexPath.row];
     }
 }
 
+/**
+ *  顶部Cell滚动实现代码
+ */
 -(void)topItemTapScroll:(HHZSlipTopItemCell *)cell indexPath:(NSIndexPath *)indexPath
 {
     CGRect rect = CGRectZero;
@@ -236,6 +241,9 @@
     }
 }
 
+/**
+ *  改变顶部Button圆角
+ */
 -(void)changeScrollLineLayer
 {
     if (_fillType == HHZSlipTopScrollViewItemFillTypeTotalFill)
@@ -253,7 +261,7 @@
         _selectedIndex = scrollIndex;
         _currentTopCell = [self.topScrollView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:scrollIndex inSection:0]];
         _currentTopCell.isSelected = YES;
-        [_topScrollView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:_selectedIndex inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        [self topItemTapScroll:_currentTopCell indexPath:[NSIndexPath indexPathForRow:_selectedIndex inSection:0]];
     }
 }
 
@@ -261,8 +269,11 @@
 {
     if (scrollIndex < self.bottomScrollView.viewsArray.count) {
         _selectedIndex = scrollIndex;
-        [self.delegate hhz_SlipViewBottomViewScroll:self.bottomScrollView.viewsArray[scrollIndex] index:scrollIndex];
-        [self.bottomScrollView setContentOffset:CGPointMake(self.bottomScrollView.contentOffset.x, scrollIndex * self.bottomScrollView.width) animated:YES];
+         [self.bottomScrollView setContentOffset:CGPointMake(self.bottomScrollView.contentOffset.x, scrollIndex * self.bottomScrollView.width) animated:YES];
+        if (_delegate && [_delegate respondsToSelector:@selector(hhz_SlipViewBottomViewScroll:index:)])
+        {
+            [_delegate hhz_SlipViewBottomViewScroll:self.bottomScrollView.viewsArray[scrollIndex] index:scrollIndex];
+        }
     }
 }
 
@@ -293,20 +304,10 @@
         cell = [HHZSlipTopItemCell configCellWithTableView:tableView title:self.topScrollView.titleArray[indexPath.row] ];
         ((HHZSlipTopItemCell *)cell).isSelected = (_selectedIndex == indexPath.row);
     }
-//    else if ([tableView isEqual:self.bottomScrollView])
-//    {
-//        static NSString * bottomScrollViewCellIdentifier = @"bottomScrollViewCellIdentifier";
-//        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:bottomScrollViewCellIdentifier];
-//        if(!cell)
-//        {
-//            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bottomScrollViewCellIdentifier];
-//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//            [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-//            cell.transform = CGAffineTransformMakeRotation(M_PI_2);
-//        }
-//        [cell.contentView addSubview:[self.bottomScrollView gainViewAtIndex:indexPath.row]];
-//        return cell;
-//    }
+    else if ([tableView isEqual:self.bottomScrollView])
+    {
+        cell = [HHZSlipBottomItemCell configCellWithTableView:tableView contentView:_bottomScrollView.viewsArray[indexPath.row]];
+    }
     return cell;
     
 }

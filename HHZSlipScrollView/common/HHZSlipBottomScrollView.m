@@ -23,18 +23,4 @@
     return self;
 }
 
--(void)configviewArray:(NSArray *)viewArray
-{
-    _viewsArray = [NSMutableArray arrayWithArray:viewArray];
-}
-
--(NSInteger)gainViewArrayCount
-{
-    return _viewsArray.count;
-}
-
--(UIView *)gainViewAtIndex:(NSInteger)index
-{
-    return _viewsArray[index];
-}
 @end

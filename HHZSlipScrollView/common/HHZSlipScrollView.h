@@ -14,14 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol HHZSlipScrollViewDelegate <NSObject>
 
-@optional
 //获取顶部滚动视图文字数组
 -(NSArray *)hhz_SlipScrollViewTopTitleArray:(UITableView *)topScrollView;
 
 //底部视图滚动回调
 -(void)hhz_SlipViewBottomViewScroll:(UIView *)vc index:(NSInteger)index;
 
-@required
 //获取底部滚动视图数组
 -(NSArray *)hhz_SlipScrollViewBottomViewArray:(UITableView *)bottomScrollView;
 
